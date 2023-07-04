@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Margini</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box {
+        width: 102px;
+        background: #fefefe;
+        border: 1px solid red;
+      }
+      div.box > div {
+        background: #fcc4c4;
+        height: 50px;
+        width: 100px;
+        border: 1px solid #252525;
+        text-align: center;
+      }
+
+      div.padding > div {
+        padding-top: 20px;
+      }
+      div.margin > div {
+        margin-top: 20px;
+      }
+
+      .margin-nesting-container {
+        background: #fefefe;
+        padding: 8px;
+      }
+
+      .margin-nesting {
+        background: #eeff00;
+        margin-top: 48px;
+        margin-bottom: 48px;
+      }
+
+      .alternate-section {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        border-top: 3px dashed #252525;
+        background: #fefe;
+        padding: 8px;
+      }
+
+      .example-2 p {
+        margin-top: 32px;
+      }
+
+      .blue {
+        background-color: lightblue;
+      }
+
+      .pink {
+        background-color: lightpink;
+      }
+
+      .example-3-header {
+        margin-bottom: -20px;
+      }
+      .example-3-header h1 {
+        margin-bottom: 10px;
+      }
+
+      .example-3-main {
+        margin-top: -10px;
+      }
+
+      .example-3-main p {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section>
+        <h1 class="heading-primary">Prabusirea marginilor</h1>
+        <article>
+          Foloseste <strong>margin</strong> cand vrei sa maresti distanta dintre
+          elemente; <br />
+          Foloseste <strong>padding</strong> cand:
+          <ul>
+            <li>- ai background/border</li>
+            <li>
+              - vrei sa maresti distanta dintre continut si marginea elementului
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Default</h2>
+        <div class="box">
+          <div>A</div>
+          <div>B</div>
+          <div>C</div>
+        </div>
+
+        <h2>padding-top: 20px</h2>
+        <div class="box padding">
+          <div>A</div>
+          <div>B</div>
+          <div>C</div>
+        </div>
+
+        <h2>margin-top: 20px;</h3>
+        <div class="box margin">
+          <div>A</div>
+          <div>B</div>
+          <div>C</div>
+        </div>
+      </section>
+
+      <section class="alternate-section">
+        <article>
+          <h2>A curios case of margins #1</h2>
+          <p>
+            Marginea este facuta sa adauge dinstanta intre elemente la acelasi
+            nivel ierarhic. Nu este menita sa adauge distanta intre copil si
+            'cutia' parintelui. Marginea va incearca sa mareasca distanta dintre
+            siblings(elemente invecinate, la acelasi nivel) chiar daca asta
+            inseamna ca va transfera marginea la elementul parinte. In acest
+            caz, efectul ar fi fost acelasi precum adaugarea la elementul
+            parinte &lt;div>, nu la copilul &lt;p>. <br />
+            Pot scapa de aceasta problema prin trei metode:
+          </p>
+          <ul>
+            <li>padding</li>
+            <li>border</li>
+          </ul>
+        </article>
+        <div>
+          <p class="margin-nesting">Paragraph One</p>
+        </div>
+        <p class="margin-nesting">Paragraph Two</p>
+      </section>
+
+      <section class="alternate-section example-2">
+        <h2>A curios case of margins #2</h2>
+        <div>
+          In acest scenariu, am putea sa ne asteptam ca cele doua sectiune sa
+          fie una langa cealalta, cu marginiile aplicate doar elementelor din
+          interior. Deoarce &lt;section> nu au margin deloc! Intentia era sa
+          adaugam paragrafelor un pic de spatiu in interiorul container-ului.
+          Problema este ca si '0px' margin este tot o margine 'collapsible'.
+          Fiecare sectiunea are 0px margin-top, si in combinatie cu cei '32px'
+          ai paragrafului, marginea mai mare castiga.
+        </div>
+        <div class="blue">
+          <p>Paragraph One</p>
+        </div>
+        <div class="pink">
+          <p>Paragraph Two</p>
+        </div>
+      </section>
+
+      <section class="alternate-section">
+        <h2>Margini negative</h2>h3
+        <article>
+          <p>
+            Daca mai mult de doua margini sunt implicate, algoritmul arata asa:
+          </p>
+          <ul>
+            <li>se ia cea mai mare margine pozitiva implicata</li>
+            <li>
+              se ia cea mai 'mare' (tehnic, cea mai mica matematic) margine
+              pozitiva implicata
+            </li>
+            <li>se aduna cele doua numere</li>
+          </ul>
+        </article>
+        <div class="example-3">
+          <div class="example-3-header">
+            <h1>My Project</h1>
+          </div>
+          <div class="example-3-main">
+            <p>Hello World</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

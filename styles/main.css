@@ -1,0 +1,65 @@
+:root {
+  --primary-color: #fefefe;
+  --accent-color: #273da4;
+  --link-color: #acdeff;
+  --link-color_hover: #f8f9fa;
+  --text-color: #242424;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.primary-page {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.primary-page h1 {
+  color: #fefefe;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.primary-page a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.container {
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.answers-list {
+  list-style-type: circle;
+}
+
+.answers-list li + li {
+  margin-top: 16px;
+}
+
+.answers-list a,
+.answers-list a:visited {
+  color: var(--link-color);
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.answers-list a:hover,
+.answers-list a:focus {
+  color: var(--link-color_hover);
+  text-decoration: underline;
+}
+
+.answers-list a::before {
+  content: "\2192";
+  margin-right: 4px;
+  text-decoration: none;
+}

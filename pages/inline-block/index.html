@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Inline si Block</title>
+
+    <style>
+      p {
+        padding: 8px;
+        background-color: #dedede;
+      }
+
+      span {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading-primary">Elemente Inline si Block</h1>
+      <section>
+        <p>
+          Elemente inline precum <span>acesta</span> și <span>acesta</span> se
+          află pe aceeași linie împreună cu nodurile de text adiacente, dacă
+          există spațiu pe aceeași linie. Elementele inline care depășesc
+          dimensiunea 'containerului' se vor
+          <span>încheia într-o linie nouă dacă este posibil (cum ar fi aceasta care
+            conține text)</span >, sau pur și simplu vor continua la o linie nouă, dacă nu, așa cum va
+          face această urmatoare imagine:
+          <img src="./long.jpg" alt="snippet of cloth" />
+        </p>
+      </section>
+      <span>Text 1</span><span>Text 2</span><span>Text 3</span>
+      <p>Paragraf</p>
+      <p>Paragraf</p>
+      <p>Paragraf</p>
+    </main>
+  </body>
+</html>

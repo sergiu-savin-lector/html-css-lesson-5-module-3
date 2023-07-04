@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Box-Sizing</title>
+    <style>
+      div {
+        width: 200px;
+        height: 80px;
+        padding: 20px;
+        border: 8px solid red;
+        background: yellow;
+      }
+
+      .content-box {
+        box-sizing: content-box;
+        /*
+        Lățimea totală: 200px + (2 * 20px) + (2 * 8px) = 216px
+        Înălțimea totală: 80px + (2 * 20px) + (2 * 8px) = 136px
+        Lățimea casetei de conținut: 200px
+        Înălțimea casetei de conținut: 80px
+        */
+      }
+
+      .border-box {
+        box-sizing: border-box;
+        /*
+        Latime totala: 200px
+        Înălțimea totală: 80px
+        Lățimea casetei de conținut: 200px - (2 * 20 px) - (2 * 8 px) = 104 px
+        Înălțimea casetei de conținut: 80px - (2 * 20px) - (2 * 8px) = 24px
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section>
+        <h1 class="heading-primary">Proprietatea box-sizing:</h1>
+        <p>
+          Proprietatea CSS box-sizing stabilește modul în care lățimea și
+          înălțimea totală a unui elementul este calculată.
+        </p>
+        <dl>
+          <dt>content-box</dt>
+          <dd>
+            proprietățile width și height setează lățimea și înălțimea zonei de
+            conținut și nu includ dimensiunile umpluturii (padding), a bordurii
+            (border) și marginii (margin).
+          </dd>
+          <dt>border-box</dt>
+          <dd>
+            proprietățile width și height setează dimensiunea finală a
+            elementului și includ valorile umpluturii (padding) și a bordurii
+            (border), dar nu și a marginii (margin).
+          </dd>
+          <dt>inherit</dt>
+          <dd>moștenește valoarea modelului cutie al parintelui.</dd>
+        </dl>
+        <article>
+          Avantajele utilizării border-box sunt:
+          <ul>
+            <li>
+              ​​Setarea înălțimii și latimii la marginile bordurii reflectă
+              spațiul efectiv ocupat și afișat pe ecran.
+            </li>
+            <li>
+              Acest lucru facilitează calculele și logica pentru programatori.
+            </li>
+            <li>Box Model mai consistent in interactiunea cu alte elemente</li>
+            <li>
+              Layout-urile sunt mai predictibile si mai usor de vizualizat.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <div class="content-box">content-box;</div>
+        <br />
+        <div class="border-box">border-box;</div>
+      </section>
+    </main>
+  </body>
+</html>

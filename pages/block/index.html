@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Modelul Cutiei</title>
+    <style>
+      body {
+        background: #fff;
+      }
+
+      div {
+        color: #fff;
+        background: #449944;
+        width: 300px;
+        border: 15px solid #81cc81;
+        padding: 50px;
+        margin: 20px;
+        text-align: center;
+      }
+
+      span {
+        background: yellow;
+        color: #2c2c2c;
+      }
+
+      dt {
+        font-weight: bold;
+      }
+
+      dd::before {
+        content: "=";
+      }
+
+      dd + dt {
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading-primary">Model de element bloc (margin, padding)</h1>
+      <section>
+        <div><span>Text</span></div>
+        <article>
+          <dl>
+            <dt>Content (zona de conținut)</dt>
+            <dd>
+              conținutul unui element, cum ar fi un text, o imagine, un
+              videoclip sau elemente imbricate. În mod implicit, înălțimea zonei
+              de conținut este determinată de conținut, lățimea este determinată
+              de tipul elementului (bloc sau inline).
+            </dd>
+
+            <dt>Padding (umplutura)</dt>
+            <dd>
+              distanța dintre conținutul unui element și bordura acestuia.
+              Folosit pentru efecte decorative. Nu poate avea valori negative.
+            </dd>
+
+            <dt>Border (bordura)</dt>
+            <dd>
+              chenarul elementului, în mod implicit lățimea sa este zero. Dacă
+              nu este specificată nicio culoare a bordurei, aceasta capătă
+              culoarea conținutului principal, cum ar fi textul.
+            </dd>
+
+            <dt>Margin (marginea)</dt>
+            <dd>
+              adaugă o margine înafara elementului, de la marginea exterioară
+              (bordură) la elementele adiacente, separându-le astfel pe pagină.
+              Poate avea valori negative.
+            </dd>
+          </dl>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

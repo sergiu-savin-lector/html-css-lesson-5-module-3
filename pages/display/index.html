@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Display</title>
+    <style>
+      article {
+        height: 60px;
+        background-color: red;
+        padding: 10px;
+        border-radius: 7px;
+      }
+
+      article + article {
+        margin-top: 16px;
+      }
+
+      article span {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        padding: 10px;
+      }
+
+      .selector {
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading-primary">
+        Proprietatea display: inline, inline-block si block
+      </h1>
+      <p>
+        Proprietatea de afișare CSS stabilește dacă un element este tratat ca
+        element bloc sau element inline;
+      </p>
+      <p>
+        Comparativ cu <strong>display: inline</strong>, diferența majoră este că
+        display: <strong>inline-block</strong> permite setarea unei lățimi și
+        înălțimi a elementului. <br />
+        De asemenea, cu <strong>display: inline-block</strong>,
+        marginile/padding-urile de sus și de jos sunt respectate, dar cu
+        <strong>display:inline</strong> nu.
+      </p>
+      <section>
+        <div>
+          <article class="rand">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </article>
+
+          <article class="rand">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </article>
+        </div>
+        <div class="selector">
+          <label for="display">display:</label>
+          <select id="display">
+            <option selected>block</option>
+            <option>inline</option>
+            <option>inline-block</option>
+            <option>none</option>
+          </select>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    const articles = document.querySelectorAll(".rand");
+    const select = document.querySelector("select");
+
+    function updateDisplay() {
+      articles.forEach((article) => {
+        article.style.display = select.value;
+      });
+    }
+
+    select.addEventListener("change", updateDisplay);
+
+    updateDisplay();
+  </script>
+</html>

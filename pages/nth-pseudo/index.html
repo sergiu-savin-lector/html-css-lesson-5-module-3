@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mai întâi normalizarea -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+    <!-- Apoi stilurile -->
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .cards {
+        background: #e34c4c;
+        padding: 16px;
+      }
+
+      .card {
+        margin-top: 16px;
+        height: 50px;
+        border: 1px solid white;
+        background: lightcoral;
+      }
+
+      .card:first-child {
+        margin-top: 0;
+      }
+
+      .example-section {
+        background: #fefefe;
+        border-top: 3px dashed #313131;
+        margin-top: 32px;
+        padding-top: 16px;
+      }
+
+      .example-3 p:nth-last-child(3n + 0) {
+        background: red;
+      }
+    </style>
+    <title>Pseudo-clase structurale</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading-primary">
+        Pseudo-clase structurale: first/last-сhild, nth-child/nth-last-child
+      </h1>
+      <section class="example-section">
+        <h2>Zebra Table</h2>
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Points</th>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>Adam</td>
+            <td>Johnson</td>
+            <td>67</td>
+          </tr>
+        </table>
+      </section>
+      <section class="example-section">
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+      <section class="example-section last-child-section">
+        <article>
+          Folosind formula <em>(an + b)</em>, unde:
+          <dl>
+            <dt>a</dt>
+            <dd>reprezinta 'ciclul' aplicarii stilului</dd>
+            <dt>n</dt>
+            <dd>numaratoare, incepe la 0</dd>
+            <dt>b</dt>
+            <dd>decalajul dupa care se aplica regula</dd>
+          </dl>
+          <div class="example-3">
+            <p>The first paragraph.</p>
+            <p>The second paragraph.</p>
+            <p>The third paragraph.</p>
+            <p>The fourth paragraph.</p>
+            <p>The fifth paragraph.</p>
+            <p>The sixth paragraph.</p>
+            <p>The seventh paragraph.</p>
+            <p>The eight paragraph.</p>
+            <p>The ninth paragraph.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
